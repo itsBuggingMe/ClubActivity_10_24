@@ -11,7 +11,7 @@ internal class GPTInstance
 {
     private static readonly string DefinitelyNotAKeyIDontKnowWhatYouAreTalkingAbout = "InNrLWpOQVlGc0haa1lIVllUZVFHS2dBWW03M0gtNmZkSHdwQTlNbGZaQjBjWVQzQmxia0ZKb0tqbERzRVhGUHNiSGRyRzdjZk5GSC0xcVdsX2VjLXhHZlJUd20xSDhBIg==";
     private HttpClient _httpClient = new();
-    private ChatClient _client = new(model: "gpt-4o-mini", apiKey: Encoding.ASCII.GetString(Convert.FromBase64String(DefinitelyNotAKeyIDontKnowWhatYouAreTalkingAbout)));
+    private ChatClient _client = new(model: "gpt-4o-mini", apiKey: Encoding.ASCII.GetString(Convert.FromBase64String(DefinitelyNotAKeyIDontKnowWhatYouAreTalkingAbout)).Replace("\"", ""));
     private string sysPrompt = "You are a helpful assisstant";
     private Stack<ChatMessage> _chatMessages = new();
     

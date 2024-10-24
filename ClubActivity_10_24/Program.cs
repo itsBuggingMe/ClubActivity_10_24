@@ -12,7 +12,7 @@ internal class Program
         Console.WriteLine("You need to get into the castle, but dont know the password...");
 
         string passwordGuess = Console.ReadLine()!;
-        while (!IsEqualIgnoreCase(passwordGuess, "cheese"))
+        while (!(passwordGuess.Contains("cheese") || passwordGuess.Contains("Cheese")))
         {
             string botResponse = GPT.AskQuestion(passwordGuess);
             Console.WriteLine(botResponse);
@@ -21,6 +21,4 @@ internal class Program
 
         Console.WriteLine("You got in the castle!");
     }
-
-    private static bool IsEqualIgnoreCase(string a, string b) => a.Equals(b, StringComparison.InvariantCultureIgnoreCase);
 }
