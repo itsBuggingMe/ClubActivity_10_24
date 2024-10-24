@@ -14,7 +14,8 @@ internal class Program
         string passwordGuess = Console.ReadLine()!;
         while (!IsEqualIgnoreCase(passwordGuess, "cheese"))
         {
-            Console.WriteLine(GPT.AskQuestion(passwordGuess));
+            string botResponse = GPT.AskQuestion(passwordGuess);
+            Console.WriteLine(botResponse);
             passwordGuess = Console.ReadLine()!;
         }
 
